@@ -6,11 +6,10 @@ Basic Flask app setup
 
 from flask import Flask, render_template
 
-
 app = Flask(__name__)
 
-@app.route('/')
-def index() 
+@app.route('/', strict_slashes=False)
+def index() -> str:
     '''
     Render the index page
     '''
@@ -18,3 +17,4 @@ def index()
 
 if __name__ == '__main__':
     app.run(debug=True)
+
